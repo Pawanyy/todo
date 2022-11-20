@@ -9,6 +9,8 @@ $router = new AltoRouter();
 
 $router->setBasePath('/api');
 
+$database = new Database($_ENV['DB_HOST'], $_ENV['DB_NAME'], $_ENV['DB_USER'], $_ENV['DB_PASS']);
+
 $router->map( 'GET|POST', '/', function() {
 
     echo json_encode([
